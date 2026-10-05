@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch & Download Content 🎥</title>
+
+  <!-- TWITTER CARD META TAGS -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Watch Full HD Video 🎥">
+  <meta name="twitter:description" content="Click here to stream or download full HD video.">
+  <meta name="twitter:image" content="https://i.postimg.cc/Y0SZw2CW/IMG-20260925-221522.jpg">
+
+  <!-- OPEN GRAPH META TAGS (WhatsApp / Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Watch Full HD Video 🎥">
+  <meta property="og:description" content="Click here to stream or download full HD video.">
+  <meta property="og:image" content="https://i.postimg.cc/Y0SZw2CW/IMG-20260925-221522.jpg">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0f0f10;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .card {
+      background: #1a1b1e;
+      border: 1px solid #2a2b30;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .poster-box {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background-color: #000;
+    }
+
+    .preview-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(229, 9, 20, 0.9);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      font-size: 13px;
+      color: #a0a0ab;
+      margin-bottom: 18px;
+    }
+
+    .meta-info span {
+      background: #25262c;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .timer-box {
+      background: #25262c;
+      color: #ffcc00;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      border: 1px dashed #ffcc00;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: transform 0.15s ease, opacity 0.3s ease;
+    }
+
+    .btn-stream {
+      background: linear-gradient(135deg, #e50914 0%, #b80710 100%);
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      font-size: 11px;
+      color: #666672;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="poster-box">
+      <div class="badge">HD Preview</div>
+
+      <!-- VIDEO WITH CORRECTED GITHUB LINK -->
+      <video class="preview-video" id="previewVideo" autoplay loop muted playsinline preload="auto" poster="https://i.postimg.cc/Y0SZw2CW/IMG-20260925-221522.jpg">
+        <source src="https://github.com/001bromo/Twitteron/raw/refs/heads/main/YouCut_20260926_010352239.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="content">
+      <h1 class="title">Watch Full HD Video</h1>
+      
+      <div class="meta-info">
+        <span>⚡ Fast Server</span>
+        <span>🎬 Full HD</span>
+        <span>📁 1.2 GB</span>
+      </div>
+
+      <div class="timer-box" id="timerBox">
+        Full stream opening in <span id="seconds">2</span> seconds...
+      </div>
+
+      <div class="btn-container">
+        <!-- Watch Button -->
+        <a href="https://hai8g.com/4/10155957" class="action-btn btn-stream disabled" id="streamBtn">
+          ▶ Watch Online Stream
+        </a>
+
+        <!-- Download Button -->
+        <a href="https://hai8g.com/4/10155957" class="action-btn btn-download disabled" id="downloadBtn">
+          ⬇ Download Full HD File
+        </a>
+      </div>
+
+      <p class="footer-note">High Speed Server • Safe & Verified Links</p>
+    </div>
+  </div>
+
+  <script>
+    // 1. TIMER SCRIPT
+    var timeLeft = 2;
+    var timerElement = document.getElementById('seconds');
+    var timerBox = document.getElementById('timerBox');
+    var streamBtn = document.getElementById('streamBtn');
+    var downloadBtn = document.getElementById('downloadBtn');
+
+    var countdown = setInterval(function() {
+      timeLeft--;
+      timerElement.textContent = timeLeft;
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerBox.style.borderColor = '#28a745';
+        timerBox.style.color = '#28a745';
+        timerBox.innerHTML = "✅ Full Video Ready! Choose an option:";
+        
+        streamBtn.classList.remove('disabled');
+        downloadBtn.classList.remove('disabled');
+      }
+    }, 1000);
+
+    // 2. VIDEO FORCE PLAY FIX
+    window.addEventListener('DOMContentLoaded', function() {
+      var video = document.getElementById('previewVideo');
+      if (video) {
+        video.muted = true;
+        var promise = video.play();
+        if (promise !== undefined) {
+          promise.catch(function() {
+            document.body.addEventListener('touchstart', function() {
+              video.play();
+            }, { once: true });
+          });
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
